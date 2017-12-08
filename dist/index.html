@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>kingchiller</title>
+  <meta name="description" content="Donate time to chill">
+  <meta name="keywords" content="kingchiller, king, chiller, chill, help, time, recreation, chill out, donate, bitcoin, ehterum, momo">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+
+  <meta property="og:url" content="https://kingchiller.com/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="kingchiller">
+  <meta property="og:image" content="https://kingchiller.com/image.jpg">
+  <meta property="og:description" content="Donate time to chill">
+  <meta property="og:site_name" content="kingchiller">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:author" content="@stophecom">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@stophecom">
+  <meta name="twitter:url" content="https://kingchiller.com/index.html">
+  <meta name="twitter:title" content="kingchiller">
+  <meta name="twitter:description" content="Donate time to chill">
+  <meta name="twitter:image" content="https://kingchiller.com/image.jpg">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20423829-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-20423829-1');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+</head>
+
+<body>
+  <!-- Aha, a curious mind. Here you go: @stophecom -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-family: Helvetica, Arial, sans-serif;
+      justify-content: center;
+      margin: 0;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    a {
+      color: inherit;
+      display: inline-flex;
+    }
+
+    .main {
+      align-items: center;
+      display: flex;
+      flex-grow: 1;
+    }
+
+    .field {
+      margin-bottom: 2em;
+    }
+
+    label {
+      line-height: 1.5;
+      font-size: .8em;
+    }
+
+    input {
+      border: 1px solid #4ac396;
+      height: 30px;
+      padding-left: 12px;
+      padding-right: 12px;
+      width: 100%;
+    }
+
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 12px;
+      text-decoration: none;
+    }
+
+    .why {
+      padding: 5px;
+    }
+
+    .flip-container {
+      perspective: 1000px;
+    }
+
+    .flip-container.hover .flipper {
+      transform: rotateY(180deg);
+    }
+
+    .flip-container,
+    .front,
+    .back {
+      min-height: 300px;
+      padding: 12px;
+      width: 320px;
+    }
+
+    .flipper {
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .front,
+    .back {
+      backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .front {
+      z-index: 2;
+      transform: rotateY(0deg);
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+  </style>
+  <script type="text/javascript">
+    function flip() {
+      document.getElementsByClassName('js-flipper')[0].classList.toggle('hover');
+    }
+  </script>
+  <main class="main">
+    <section class="donate">
+      <div class="flip-container js-flipper">
+        <div class="flipper">
+          <div class="front">
+            <h1>Donate time to chill</h1>
+            <div class="field"><label for="btc">Bitcoin (BTC):</label> <input id="btc" type="text" value="157VC9bs8AQKoX6JaTf1rCR4rGCZWeNTHu"></input>
+            </div>
+            <div class="field"><label for="eth">Etherum (ETH): </label> <input id="eth" type="text" value="0x889A9B4d22eC01584FAA2c65e6cE8942EceFe947"></input>
+            </div>
+            <div>
+              <a class="why" href="javascript:;" onclick="flip()">?</a>
+            </div>
+          </div>
+          <div class="back" onclick="flip()">
+            <div>
+              <h2>What is this about?</h2>
+              <p>If time is money, money is time. Every donation buys me:</p>
+              <ul>
+                <li>Time to chill</li>
+                <li>Time to reflect</li>
+                <li>Time to work out</li>
+                <li>Time to read Momo</li>
+                <li>Time to get more sleep</li>
+                <li><a href="mailto:kingchiller@gmail.com">Time to work on your idea</a></li>
+                <li>Time to spend with the family</li>
+                <li>Time to come up with stuff like this</li>
+              </ul>
+              <a href="javascript:;" class="close">
+                X
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
