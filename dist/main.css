@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica, Arial, sans-serif;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  display: inline-flex;
+}
+
+label {
+  line-height: 1.5;
+  font-size: .8em;
+}
+
+input {
+  border: 1px solid #4ac396;
+  height: 30px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 100%;
+}
+
+.bg {
+  background-image: url('bg2.jpg');
+  background-position: center;
+  background-size: cover;
+  left: 0;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.main {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+}
+
+.donate {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(20px, 20px) scale(.5);
+  transition: 200ms;
+  transform-origin: right bottom;
+}
+
+.main.donate--show .donate {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, 0) scale(1);
+}
+
+.js-hide-donate {
+  display: none !important;
+}
+
+.main.donate--show .js-hide-donate {
+  display: flex !important;
+}
+
+.main.donate--show .js-show-donate {
+  display: none !important;
+}
+
+.btn-info {
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  bottom: 20px;
+  display: flex;
+  height: 40px;
+  font-size: 1em;
+  font-weight: bold;
+  justify-content: center;
+  position: fixed;
+  right: 20px;
+  text-decoration: none;
+  width: 40px;
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.field {
+  margin-bottom: 2em;
+}
+
+.why {
+  padding: 5px;
+}
+
+.flip-container {
+  perspective: 1000px;
+}
+
+.flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+  min-height: 300px;
+  padding: 12px;
+  width: 300px;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front, .back {
+  background-color: rgba(255, 255, 255, .9);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
