@@ -28,6 +28,10 @@ label {
   font-size: .8em;
 }
 
+small {
+  font-size: .8em;
+}
+
 input {
   border: 1px solid #4ac396;
   height: 30px;
