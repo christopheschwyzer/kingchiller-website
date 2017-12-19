@@ -103,6 +103,10 @@ module.exports = {
     color: '#3B8070'
   },
 
+  css: [
+    { src: '~assets/styles.scss', lang: 'scss' }
+  ],
+
   modules: [
     ['@nuxtjs/google-analytics', {
       id: 'UA-20423829-1'

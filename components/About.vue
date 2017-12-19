@@ -1,13 +1,13 @@
 <template>
 <div id="about">
-  <div class="wrapper" v-show="dialog">
+  <div class="wrapper" :class="{'active': dialog}">
     <div class="overlay" @click="dialog = false"></div>
     <section class="dialog" :class="{'active': dialog}">
       <div class="flip-container" :class="{'flip': flip}">
         <div class="flipper">
           <div class="front">
             <div>
-              <h1>Donate time</h1>
+              <h3>Donate time</h3>
               <p>It's about time to start this interactive fairy tale. Every donation buy me time to develop this project.</p>
               <div class="field"><label for="btc">Bitcoin (BTC): </label> <input id="btc" type="text" value="157VC9bs8AQKoX6JaTf1rCR4rGCZWeNTHu"></input>
               </div>
@@ -25,9 +25,7 @@
             <a href="javascript:;" class="btn-close" @click="dialog = false">X</a>
           </div>
           <div class="back" @click="flip = false">
-            <h2>WTF?</h2>
-            <p>This is an experiment. Be curious. No masterplan. I'm an artist, designer and web developer who works on story, artwork and website with the resources I got.</p>
-            <p>For ideas, participation or work related inquiries <a href="mailto:kingchiller@gmail.com">contact me</a>.</p>
+            <p>This is an experiment. Be curious. No masterplan. For ideas, participation or work related inquiries <a href="mailto:kingchiller@gmail.com">contact me</a>.</p>
             <p>Chapter "Zero" is in development.</p>
             <a href="javascript:;" class="btn-close" @click="dialog = false">X</a>
             <a href="javascript:;" class="btn-back">&lt;</a>

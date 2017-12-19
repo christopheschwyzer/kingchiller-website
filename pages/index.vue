@@ -1,12 +1,8 @@
 <template>
 <section class="wallpaper">
-
   <div class="bg">
     <canvas id="canvas"></canvas>
   </div>
-  <main class="main">
-    <h1>test</h1>
-  </main>
 </section>
 </template>
 

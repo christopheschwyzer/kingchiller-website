@@ -1,0 +1,45 @@
+@import './colors.scss';
+
+.paper-btn,
+[type="button"],
+button {
+  align-self: center;
+  background: transparent;
+  color: $primary;
+  display: inline;
+  outline: none;
+  border: solid 2px $primary;
+  font-size: 1rem;
+  padding: 0.75rem;
+  cursor: pointer;
+
+  &.btn-large {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  &.btn-small {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
+
+  &:focus {
+    border: 2px solid $secondary;
+    box-shadow: 2px 8px 4px -6px hsla(0,0%,0%,.3);
+  }
+
+  &:active {
+    border-color: hsla(0,0%,0%,.2);
+    transition: none;
+  }
+
+  &.disabled,
+  &[disabled] {
+    opacity: 0.4;
+  }
+}
