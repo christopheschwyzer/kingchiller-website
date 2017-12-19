@@ -7,6 +7,7 @@
         <div class="flipper">
           <div class="front">
             <div>
+              <nuxt-link v-show="$route.name !== 'index'" class="ripple" to="/">Home</nuxt-link>
               <h3>Donate time</h3>
               <p>It's about time to start this interactive fairy tale. Every donation buy me time to develop this project.</p>
               <div class="field"><label for="btc">Bitcoin (BTC): </label> <input id="btc" type="text" value="157VC9bs8AQKoX6JaTf1rCR4rGCZWeNTHu"></input>
@@ -26,15 +27,15 @@
           </div>
           <div class="back" @click="flip = false">
             <p>This is an experiment. Be curious. No masterplan. For ideas, participation or work related inquiries <a href="mailto:kingchiller@gmail.com">contact me</a>.</p>
-            <p>Chapter "Zero" is in development.</p>
-            <a href="javascript:;" class="btn-close" @click="dialog = false">X</a>
-            <a href="javascript:;" class="btn-back">&lt;</a>
+            <p><a href="https://twitter.com/stophecom" target="_blank" rel="noopener">@stophecom</a></p>
+            <a href="javascript:;" class="btn-close ripple" @click="dialog = false">X</a>
+            <a href="javascript:;" class="btn-back ripple">&lt;</a>
           </div>
         </div>
       </div>
     </section>
   </div>
-  <a class="btn-info" href="javascript:;" @click="dialog = !dialog" v-text="dialog ? 'X': '?'"></a>
+  <a class="btn-info ripple" href="javascript:;" @click="dialog = !dialog" v-text="dialog ? 'X': '?'"></a>
 </div>
 </template>
 
@@ -44,6 +45,11 @@ export default {
     return {
       dialog: false,
       flip: false
+    }
+  },
+  watch: {
+    '$route': function () {
+      this.dialog = false
     }
   }
 }

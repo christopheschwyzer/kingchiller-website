@@ -1,0 +1,11 @@
+@import './colors.scss';
+
+.section {
+  min-height: 100vh;
+  overflow: hidden;
+
+  &.section--dark {
+    background-color: $primary;
+    color: $darkPrimary;
+  }
+}

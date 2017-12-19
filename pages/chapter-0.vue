@@ -1,15 +1,19 @@
 <template>
 <div id="chapter-0">
-
-  <section class="slide">
+  <section class="section section--dark">
     <h1>kingchiller productions presents</h1>
+    <component-hint/>
   </section>
 </div>
 </template>
 
 <script>
-export default {
+import componentHint from '~/components/Hint.vue'
 
+export default {
+  components: {
+    componentHint
+  }
 }
 </script>
 

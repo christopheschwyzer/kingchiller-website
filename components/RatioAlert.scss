@@ -1,0 +1,22 @@
+#ratioAlert {
+  align-items: center;
+  background-color: hsla(0,0,10%, .9);
+  display: none;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  @media (max-aspect-ratio: 1/1) {
+    display: flex;
+  }
+
+  .alert {
+    background-color: hsla(0,0,90%, .9);
+    min-width: 300px;
+    padding: 16px;
+    width: 50vw;
+  }
+}

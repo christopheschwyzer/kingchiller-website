@@ -99,13 +99,12 @@ module.exports = {
   /*
    ** Customize the progress bar color
    */
-  loading: {
-    color: '#3B8070'
-  },
+  loading: '~/components/Spinner.vue',
 
-  css: [
-    { src: '~assets/styles.scss', lang: 'scss' }
-  ],
+  css: [{
+    src: '~assets/styles.scss',
+    lang: 'scss'
+  }],
 
   modules: [
     ['@nuxtjs/google-analytics', {
