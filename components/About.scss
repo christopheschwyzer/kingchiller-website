@@ -47,20 +47,31 @@
     }
   }
 
+  .vissense-controller {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    min-height: 1px;
+    min-width: 1px;
+  }
+
   .btn-info {
     align-items: center;
     background-color: white;
-    border-radius: 50%;
-    bottom: 20px;
     display: flex;
     height: 40px;
     font-size: 1em;
     font-weight: bold;
     justify-content: center;
-    position: absolute;
-    right: 20px;
     text-decoration: none;
+    transition: 200ms;
     width: 40px;
+
+    &.fixed {
+      position: fixed;
+      right: 0;
+      top: 0;
+    }
   }
 
   .btn-back,

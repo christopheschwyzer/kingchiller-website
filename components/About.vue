@@ -35,17 +35,39 @@
       </div>
     </section>
   </div>
-  <a class="btn-info ripple" href="javascript:;" @click="dialog = !dialog" v-text="dialog ? 'X': '?'"></a>
+  <div id="js-button" class="vissense-controller">
+    <a class="btn-info ripple" :class="{fixed: buttonFixed}" href="javascript:;" @click="dialog = !dialog" v-text="dialog ? 'X': '?'"></a>
+  </div>
+
 </div>
 </template>
 
 <script>
+import VisSenseFactory from 'vissense'
+
 export default {
   data() {
     return {
       dialog: false,
-      flip: false
+      flip: false,
+      buttonFixed: false
     }
+  },
+  mounted: function () {
+    const VisSense = VisSenseFactory(window)
+
+    var self = this
+    var button = document.getElementById('js-button')
+    var visibility = VisSense(button, { fullyvisible: 1 })
+
+    var visibilityMonitor = visibility.monitor({
+      fullyvisible: function () {
+        self.buttonFixed = false
+      },
+      hidden: function () {
+        self.buttonFixed = true
+      }
+    }).start()
   },
   watch: {
     '$route': function () {

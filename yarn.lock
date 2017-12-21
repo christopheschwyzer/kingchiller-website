@@ -2685,6 +2685,10 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
+gsap@^1.20.3:
+  version "1.20.3"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-1.20.3.tgz#c9a6e7be057cf59417483448f925472fa2f73cd7"
+
 gzip-size@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-3.0.0.tgz#546188e9bdc337f673772f81660464b389dce520"
@@ -2818,6 +2822,10 @@ home-or-tmp@^2.0.0:
 hosted-git-info@^2.1.4:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
+
+howler@^2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/howler/-/howler-2.0.7.tgz#65d035e36cd975365c9e03bf46db3f2f7722788b"
 
 html-comment-regex@^1.1.0:
   version "1.1.1"
@@ -6006,6 +6014,10 @@ viewport-dimensions@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/viewport-dimensions/-/viewport-dimensions-0.2.0.tgz#de740747db5387fd1725f5175e91bac76afdf36c"
 
+vissense@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/vissense/-/vissense-0.10.0.tgz#e2014c8c2336a0041b4c3c87ce4efa1048050cc7"
+
 vm-browserify@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
@@ -6045,6 +6057,10 @@ vue-meta@^1.1.0:
     deepmerge "^2.0.0"
     lodash.isplainobject "^4.0.6"
     object-assign "^4.1.1"
+
+vue-parallaxy@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vue-parallaxy/-/vue-parallaxy-1.0.4.tgz#e254b7acc84657171dedcb481ddf4f91e07e2380"
 
 vue-router@^2.7.0:
   version "2.8.1"

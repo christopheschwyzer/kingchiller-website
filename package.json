@@ -15,7 +15,11 @@
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
-    "nuxt": "^1.0.0-rc11"
+    "gsap": "^1.20.3",
+    "howler": "^2.0.7",
+    "nuxt": "^1.0.0-rc11",
+    "vissense": "^0.10.0",
+    "vue-parallaxy": "^1.0.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
