@@ -6,13 +6,46 @@
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
+  position: relative;
 
-  &.section--white {
+  &.section--light {
     background-color: white;
   }
 
   &.section--dark {
     background-color: $primary;
     color: $darkPrimary;
+  }
+
+  &.section--fixed {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  &.section--front {
+    z-index: 1 !important;
+  }
+
+  > .section {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &.section--fixed {
+      position: fixed;
+      z-index: -1;
+
+      > img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
   }
 }

@@ -95,11 +95,20 @@ module.exports = {
         href: '/apple-touch-icon.png'
       },
     ],
+    script: [{
+      src: 'https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver&flags=gated'
+    }]
   },
   /*
    ** Customize the progress bar color
    */
   loading: '~/components/Spinner.vue',
+
+  plugins: [{
+      src: '~plugins/vueScrollReveal.js',
+      ssr: false
+    }
+  ],
 
   css: [{
     src: '~assets/styles.scss',
