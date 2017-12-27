@@ -4,7 +4,8 @@ module.exports = {
    */
   head: {
     title: 'kingchiller',
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8'
       },
       {
@@ -19,7 +20,24 @@ module.exports = {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'kingchiller, king, chiller, chill, help, time, recreation, chill out, donate, bitcoin, ehterum, dogecoins, momo, cryptokitties'
+        content:
+          'kingchiller, king, chiller, chill, help, time, recreation, chill out, donate, bitcoin, ehterum, dogecoins, momo, cryptokitties'
+      },
+      {
+        name: 'mobile-web-app-capable',
+        content: 'yes'
+      },
+      {
+        name: 'apple-mobile-web-app-capable',
+        content: 'yes'
+      },
+      {
+        name: 'application-name',
+        content: 'kingchiller'
+      },
+      {
+        name: 'apple-mobile-web-app-title',
+        content: 'kingchiller'
       },
       {
         hid: 'og:type',
@@ -72,7 +90,12 @@ module.exports = {
         content: '@stophecom'
       }
     ],
-    link: [{
+    link: [
+      {
+        rel: 'manifest',
+        href: '/manifest.json'
+      },
+      {
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
@@ -95,29 +118,39 @@ module.exports = {
         href: '/apple-touch-icon.png'
       }
     ],
-    script: [{
-      src: 'https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver&flags=gated'
-    }]
+    script: [
+      {
+        src:
+          'https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver&flags=gated'
+      }
+    ]
   },
   /*
    ** Customize the progress bar color
    */
   loading: '~/components/Spinner.vue',
 
-  plugins: [{
-    src: '~plugins/vueScrollReveal.js',
-    ssr: false
-  }],
+  plugins: [
+    {
+      src: '~plugins/vueScrollReveal.js',
+      ssr: false
+    }
+  ],
 
-  css: [{
-    src: '~assets/styles.scss',
-    lang: 'scss'
-  }],
+  css: [
+    {
+      src: '~assets/styles.scss',
+      lang: 'scss'
+    }
+  ],
 
   modules: [
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-20423829-1'
-    }]
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-20423829-1'
+      }
+    ]
   ],
   /*
    ** Build configuration
