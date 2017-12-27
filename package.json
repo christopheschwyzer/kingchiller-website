@@ -19,6 +19,7 @@
     "howler": "^2.0.7",
     "nuxt": "^1.0.0-rc11",
     "screenfull": "^3.3.2",
+    "tslint": "^5.8.0",
     "vissense": "^0.10.0",
     "vue-scroll-reveal": "^1.0.3"
   },
