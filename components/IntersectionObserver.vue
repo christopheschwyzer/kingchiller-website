@@ -6,7 +6,7 @@ const warn = (msg) => {
   }
 }
 
-global.HTMLElement = typeof HTMLElement === 'undefined' ? () => {} : HTMLElement
+global.HTMLElement = typeof HTMLElement === 'undefined' ? () => { } : HTMLElement
 
 export default {
   name: 'intersection-observer',
@@ -31,7 +31,7 @@ export default {
     }
   },
   beforeMount() {
-    let intersectionRatio
+    let intersectionRatio = 0
 
     this.observer = new IntersectionObserver((entries) => {
       const entry = entries[0]
@@ -45,20 +45,27 @@ export default {
 
       let summary = {
         isIntersecting: entry.isIntersecting,
-        visibleRatio: Math.floor(entry.intersectionRatio * 100),
+        visibleRatio: Math.floor(entry.intersectionRatio * 100) / 100,
         visibilityProgress: newRatio < currentRatio ? 'decrease' : 'increase',
-        verticalScroll: scrollingDown ? 'down' : 'up'
+        scrollDirection: scrollingDown ? 'down' : 'up'
+      }
+
+      if (newRatio > 0 && currentRatio <= 0) {
+        this.$emit('visible', summary)
+      }
+
+      if (currentRatio > 0 && newRatio <= 0) {
+        this.$emit('hidden', summary)
       }
 
       if (entry.isIntersecting || newRatio <= 0) {
-        console.log(summary)
-        this.$emit('intersection', summary)
+        this.$emit('change', summary)
       }
     }, {
-      threshold: this.threshold,
-      root: this.root,
-      rootMargin: this.rootMargin
-    })
+        threshold: this.threshold,
+        root: this.root,
+        rootMargin: this.rootMargin
+      })
   },
   mounted() {
     this.$nextTick(() => {

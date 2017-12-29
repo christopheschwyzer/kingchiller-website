@@ -29,5 +29,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'Hint.scss'
+@import 'ScrollHint.scss'
 </style>
