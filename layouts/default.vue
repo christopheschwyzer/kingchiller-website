@@ -1,10 +1,10 @@
 <template>
-<div>
-  <!-- Aha, a curious mind. Here you go: @stophecom -->
-  <nuxt/>
-  <about/>
-  <ratio-alert/>
-</div>
+  <div>
+    <!-- Aha, a curious mind. Here you go: @stophecom -->
+    <nuxt/>
+    <about @about="preventScroll" />
+    <ratio-alert/>
+  </div>
 </template>
 
 <script>
@@ -15,9 +15,16 @@ export default {
   components: {
     About,
     RatioAlert
+  },
+  methods: {
+    preventScroll: function (state) {
+      document.body.classList.toggle('noScroll', state)
+    }
   }
 }
 </script>
 <style>
-@import 'default.scss'
+.noScroll {
+  overflow: hidden;
+}
 </style>
