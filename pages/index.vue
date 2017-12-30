@@ -18,7 +18,8 @@ import is from 'is_js'
 
 export default {
   mounted() {
-    require('~/assets/js/snow.js')
+    var snow = require('~/assets/js/snow.js')
+    snow()
   },
   methods: {
     goFullscreen: function () {
