@@ -19,11 +19,11 @@
         <scroll-hint v-scroll-reveal="{ origin: 'top', distance:'50px', delay: 2000, scale: 1, reset:true}" />
       </section>
 
-      <section class="section section--light">
+      <section class="section section--light section-story">
         <div class="intro flex-center boundaries">
           <div class="about">
             <div v-scroll-reveal="{ origin: 'bottom', scale: 1, viewFactor: 1, reset:true, viewOffset: { top: 100, bottom: 100} }">
-              Story is based on true events.
+              Inspired by true events.
             </div>
             <div v-scroll-reveal="{ origin: 'bottom', scale: 1, viewFactor: 1, reset:true, viewOffset: { top: 100, bottom: 100} }">
               <small>The authors' names have been hashed to protect their anonymity.</small>
@@ -33,11 +33,11 @@
       </section>
     </intersection-sound>
 
-    <section id="scene-1-3" class="section section--dark flex-center">
+    <section class="section section--dark flex-center">
       <div>working title</div>
       <h1>
-        <div v-scroll-reveal="{ origin: 'left', distance: '100px', easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)', scale: 1, viewFactor: 1, duration: 600, delay: 200, reset: true}">Minor</div>
-        <div v-scroll-reveal="{ origin: 'right', distance: '100px', easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)', scale: 1, viewFactor: 1, duration: 600, delay: 300, reset: true }">Time</div>
+        <div v-scroll-reveal="{ origin: 'left', distance: '100px', easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)', scale: 1, viewFactor: 1, duration: 600, delay: 200, reset: true}">Cold</div>
+        <div v-scroll-reveal="{ origin: 'right', distance: '100px', easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)', scale: 1, viewFactor: 1, duration: 600, delay: 300, reset: true }">Times</div>
       </h1>
     </section>
   </div>
@@ -59,3 +59,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.section-story {
+  background-image: url('/images/chapter-1/snow-texture-seamless-white-extra-light-winter-frosty-ground-cold-super-huge-even-image-256x256.jpg');
+}
+</style>

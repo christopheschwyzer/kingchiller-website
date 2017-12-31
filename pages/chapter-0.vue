@@ -6,7 +6,7 @@
     <intersection-sound src="/sounds/1/transportaton_aircraft_twin_prop_small_idle_001.mp3">
       <section id="scene-2" class="section">
         <div class="section section--fixed">
-          <img src="/images/1/airport.jpg" alt="Image">
+          <img src="/images/chapter-1/airport.jpg" alt="Image">
         </div>
         <div class="boundaries">
           <h2 v-scroll-reveal="{viewFactor: 1, delay: 200}">Chapter Zero°</h2>
@@ -46,14 +46,6 @@
       </section>
     </div>
 
-    <!-- <intersection-observer>
-      <section class="section">
-        <div class="section section--light">
-          <h1>SUPER NEW STUFF</h1>
-        </div>
-      </section>
-    </intersection-observer> -->
-
     <section class="section">
       placeholder new
     </section>
@@ -88,6 +80,9 @@ export default {
       this.visibilityProgress = reveal ? 100 - intersection.visibleRatio * 100 : -1 * (100 - intersection.visibleRatio * 100)
       this.showNext = !reveal && intersection.isIntersecting
     }
+  },
+  mounted() {
+    this.$store.commit('ADD_LEVEL', 0)
   }
 }
 </script>
