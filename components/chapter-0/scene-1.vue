@@ -1,5 +1,5 @@
 <template>
-  <div id="scene-1" class="scene">
+  <div id="scene-1">
 
     <intersection-sound src="/sounds/1/transportation_aircraft_commercial_airbus_a340_interior_landed_taxi_001.mp3">
       <section class="section section--dark">
@@ -9,15 +9,24 @@
             <strong>kingchiller</strong>
             <span>production</span>
           </div>
-          <div class="author" v-scroll-reveal="{ origin: 'top', scale: 1, delay: 200, reset:true}">
-            <strong>Created by</strong> bbeb1d4dba6e60fff230d8cd6f50ab7ff05192111de4d880792059670a6dcaf0
-          </div>
-          <div class="story" v-scroll-reveal="{ origin: 'top', scale: 1, delay: 400, reset:true}">
-            <strong>Story by</strong> 2d394e1464f1d124daa4c9f8deab4d1d43dc1783266271be04e81d26853fa4d0
-          </div>
         </div>
         <scroll-hint v-scroll-reveal="{ origin: 'top', distance:'50px', delay: 2000, scale: 1, reset:true}" />
       </section>
+
+      <parallax fadeout>
+        <div slot="background" class="author">
+          <div>
+            <strong>Created by</strong> bbeb1d4dba6e60fff230d8cd6f50ab7ff05192111de4d880792059670a6dcaf0
+          </div>
+          <div>
+            <strong>Story by</strong> 2d394e1464f1d124daa4c9f8deab4d1d43dc1783266271be04e81d26853fa4d0
+          </div>
+        </div>
+      </parallax>
+
+      <!-- <div class="section section--dark" style="height: 50vh"></div> -->
+
+      <walkway />
 
       <section class="section section--light section-story">
         <div class="intro flex-center boundaries">
@@ -46,11 +55,15 @@
 <script>
 import IntersectionSound from '~/components/IntersectionSound.vue'
 import ScrollHint from '~/components/ScrollHint.vue'
+import Parallax from '~/components/Parallax.vue'
+import Walkway from '~/components/chapter-0/Walkway.vue'
 
 export default {
   components: {
     ScrollHint,
-    IntersectionSound
+    IntersectionSound,
+    Parallax,
+    Walkway
   },
   data() {
     return {
@@ -60,8 +73,35 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.section-story {
-  background-image: url('/images/chapter-1/snow-texture-seamless-white-extra-light-winter-frosty-ground-cold-super-huge-even-image-256x256.jpg');
+<style lang="scss">
+#scene-1 {
+  .section-story {
+    background-image: url('/images/chapter-0/snow-texture-seamless-white-extra-light-winter-frosty-ground-cold-super-huge-even-image-256x256.jpg');
+  }
+
+  .production {
+    font-size: 3em;
+    margin-bottom: 1em;
+    line-height: 1;
+
+    span {
+      margin-right: 10px;
+    }
+
+    strong {
+      font-size: 1.5em;
+    }
+  }
+
+  .author {
+    > div {
+      margin-bottom: 1.5em;
+    }
+
+    strong {
+      display: block;
+      font-size: 1.4em;
+    }
+  }
 }
 </style>

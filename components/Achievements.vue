@@ -22,7 +22,7 @@ export default {
           label: 'Curious Mind'
         },
         secretKey: {
-          label: 'Golden Key'
+          label: 'Secret Key'
         },
         credits: {
           label: 'Pay your Dues'

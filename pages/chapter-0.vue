@@ -4,23 +4,23 @@
     <scene1 />
 
     <intersection-sound src="/sounds/1/transportaton_aircraft_twin_prop_small_idle_001.mp3">
-      <section id="scene-2" class="section">
-        <div class="section section--fixed">
-          <img src="/images/chapter-1/airport.jpg" alt="Image">
-        </div>
-        <div class="boundaries">
-          <h2 v-scroll-reveal="{viewFactor: 1, delay: 200}">Chapter Zero°</h2>
-          <div v-scroll-reveal="{viewFactor: 1}" class="h2-sub">Moscow, 1989</div>
-        </div>
-        <div class="boundaries">
-          <div class="block" v-scroll-reveal="{reset: true}">
-            It was a surprisingly mild morning as
-            <strong>Amir</strong> was bording the plane to Vladivostok - Russia's east coast - or what people called it Дальний Восток, the far east.
+      <parallax>
+        <img slot="background" src="/images/chapter-0/airport.jpg" alt="Image">
+        <div slot="foreground">
+          <div class="boundaries">
+            <h2 v-scroll-reveal="{viewFactor: 1, delay: 200}">Chapter Zero°</h2>
+            <div v-scroll-reveal="{viewFactor: 1}" class="h2-sub">Moscow, 1989</div>
           </div>
-        </div>
+          <div class="boundaries">
+            <div class="box" v-scroll-reveal="{reset: true}">
+              It was a surprisingly mild morning as
+              <strong>Amir</strong> was bording the plane to Vladivostok - Russia's east coast - or what people called it Дальний Восток, the far east.
+            </div>
+          </div>
 
-        <scroll-hint/>
-      </section>
+          <scroll-hint/>
+        </div>
+      </parallax>
     </intersection-sound>
 
     <section id="scene-3" class="section">
@@ -58,13 +58,15 @@ import ScrollHint from '~/components/ScrollHint.vue'
 
 import IntersectionSound from '~/components/IntersectionSound.vue'
 import IntersectionObserver from '~/components/IntersectionObserver.vue'
+import Parallax from '~/components/Parallax.vue'
 
 export default {
   components: {
     scene1,
     IntersectionSound,
     ScrollHint,
-    IntersectionObserver
+    IntersectionObserver,
+    Parallax
   },
   data() {
     return {

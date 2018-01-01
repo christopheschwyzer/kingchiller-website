@@ -35,28 +35,6 @@ h1 {
   strong {
     display: block;
   }
-
-  .production {
-    font-size: 3em;
-    margin-bottom: 1em;
-    line-height: 1;
-
-    span {
-      margin-right: 10px;
-    }
-
-    strong {
-      font-size: 1.5em;
-    }
-  }
-
-  .author {
-    margin-bottom: 1em;
-  }
-
-  .about {
-    font-size: 2em;
-  }
 }
 
 .divider {
@@ -64,7 +42,7 @@ h1 {
   background-image: linear-gradient(to bottom, $primary, rgba($primary, 0));
 }
 
-.block {
+.box {
   background-color: white;
   font-size: 2em;
   padding: 20px;
