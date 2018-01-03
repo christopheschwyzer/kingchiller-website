@@ -4,14 +4,10 @@
       <parallax>
         <div slot="background">
           <img :style="backgroundScale" src="images/chapter-0/airport-walkway-bg.jpg" alt="bg">
-          <img src="images/chapter-0/airport-walkway-fg.svg" alt="fg">
+          <img src="images/chapter-0/airport-walkway-fg-1.png" alt="fg">
         </div>
         <div slot="foreground">
-          <div class="viewport">
-            <div class="box">
-              Russia, 1988
-            </div>
-          </div>
+
         </div>
       </parallax>
     </intersection-observer>
@@ -34,7 +30,9 @@ export default {
   },
   methods: {
     animate: function (data) {
-      this.visibleRatio = 1 + data.visibleRatio
+      if (data.visibilityProgress === 'increase') {
+        this.visibleRatio = 1 + data.visibleRatio / 2
+      }
     }
   },
   computed: {

@@ -3,8 +3,9 @@
     <intersection-observer @change="fade" @visible="visible = true" @hidden="visible = false">
       <div class="viewport" :class="{dark: dark}">
         <div class="viewport-background" :class="{visible: visible}">
-          <slot name="background"></slot>
-          <div class="overlay" :style="{opacity: overlayOpacity}"></div>
+          <div class="fade" :style="{opacity: opacity}">
+            <slot name="background"></slot>
+          </div>
         </div>
         <div class="viewport-foreground">
           <slot name="foreground"></slot>
@@ -25,24 +26,21 @@ export default {
       type: Boolean,
       default: true
     },
-    fadeout: {
-      type: Boolean,
-      default: false
+    revealRatio: {
+      type: Number,
+      default: 0.8
     }
   },
   data() {
     return {
       visible: false,
-      overlayOpacity: 0
+      opacity: 1
     }
   },
   methods: {
     fade: function (data) {
-      if (!this.fadeout) {
-        return
-      }
-      if (data.visibleRatio > 0.7) {
-        this.overlayOpacity = Math.floor((data.visibleRatio - 0.7) * 1 / 0.3 * 100) / 100
+      if (data.visibleRatio < this.revealRatio && data.visibilityProgress === 'increase') {
+        this.opacity = data.visibleRatio / this.revealRatio
       }
     }
   }
@@ -60,10 +58,6 @@ export default {
     &.dark .viewport-background {
       background-color: $primary;
       color: $darkPrimary;
-
-      .overlay {
-        background-color: $primary;
-      }
     }
   }
 
@@ -76,21 +70,8 @@ export default {
     opacity: 0;
     position: fixed;
     top: 0;
-    transition: 400ms;
     width: 100%;
     z-index: -1;
-
-    .overlay {
-      background-color: white;
-      height: 100%;
-      left: 0;
-      // opacity: 1;
-      pointer-events: none;
-      position: absolute;
-      top: 0;
-      transition: 800ms 200ms;
-      width: 100%;
-    }
 
     &.visible {
       opacity: 1;

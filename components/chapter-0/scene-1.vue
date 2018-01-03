@@ -13,7 +13,7 @@
         <scroll-hint v-scroll-reveal="{ origin: 'top', distance:'50px', delay: 2000, scale: 1, reset:true}" />
       </section>
 
-      <parallax fadeout>
+      <parallax>
         <div slot="background" class="author">
           <div>
             <strong>Created by</strong> bbeb1d4dba6e60fff230d8cd6f50ab7ff05192111de4d880792059670a6dcaf0
@@ -23,8 +23,6 @@
           </div>
         </div>
       </parallax>
-
-      <!-- <div class="section section--dark" style="height: 50vh"></div> -->
 
       <walkway />
 
