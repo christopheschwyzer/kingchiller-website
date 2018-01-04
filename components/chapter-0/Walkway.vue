@@ -7,7 +7,10 @@
           <img src="images/chapter-0/airport-walkway-fg-1.png" alt="fg">
         </div>
         <div slot="foreground">
-
+          <div class="starring">
+            <div class="starring-title">Starring</div>
+            <div class="starring-name">Walter E. Gox</div>
+          </div>
         </div>
       </parallax>
     </intersection-observer>
@@ -31,7 +34,7 @@ export default {
   methods: {
     animate: function (data) {
       if ((data.visibilityProgress === 'increase' && data.scrollDirection === 'down') || (data.visibilityProgress === 'decrease' && data.scrollDirection === 'up')) {
-        this.visibleRatio = 1 + data.visibleRatio / 2
+        this.visibleRatio = 1 + data.visibleRatio / 3
       }
     }
   },
@@ -52,6 +55,26 @@ export default {
   .box {
     position: absolute;
     right: 12px;
+  }
+
+  .starring {
+    bottom: 30vh;
+    color: white;
+    font-size: 5vw;
+    font-weight: bold;
+    line-height: 1.1;
+    position: absolute;
+    right: 10vw;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3), 2px 2px rgba(0, 0, 0, 1);
+
+    .starring-title {
+      font-size: 5vw;
+      text-transform: uppercase;
+    }
+
+    .starring-name {
+      font-size: 8vw;
+    }
   }
 }
 </style>
