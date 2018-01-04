@@ -101,5 +101,9 @@ export default {
       font-size: 1.4em;
     }
   }
+
+  .about {
+    font-size: 1.6em;
+  }
 }
 </style>

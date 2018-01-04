@@ -40,7 +40,7 @@ export default {
   methods: {
     fade: function (data) {
       if (data.visibleRatio < this.revealRatio && data.visibilityProgress === 'increase') {
-        this.opacity = data.visibleRatio / this.revealRatio
+        this.opacity = Math.min(Math.floor(data.visibleRatio / this.revealRatio * 100) / 100, 1)
       }
     }
   }
@@ -67,14 +67,14 @@ export default {
     height: 100%;
     justify-content: center;
     left: 0;
-    opacity: 0;
+    visibility: hidden;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: -1;
 
     &.visible {
-      opacity: 1;
+      visibility: visible;
     }
 
     img {
@@ -89,7 +89,7 @@ export default {
   }
 
   .viewport-foreground {
-    min-height: 100vh;
+    min-height: 100%;
   }
 }
 </style>

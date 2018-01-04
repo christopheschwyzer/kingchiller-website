@@ -1,5 +1,5 @@
 <template>
-  <div class="walkway">
+  <div id="walkway">
     <intersection-observer @change="animate">
       <parallax>
         <div slot="background">
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     animate: function (data) {
-      if (data.visibilityProgress === 'increase') {
+      if ((data.visibilityProgress === 'increase' && data.scrollDirection === 'down') || (data.visibilityProgress === 'decrease' && data.scrollDirection === 'up')) {
         this.visibleRatio = 1 + data.visibleRatio / 2
       }
     }
@@ -48,9 +48,11 @@ export default {
 <style lang="scss">
 @import '~assets/styles/colors.scss';
 
-.box {
-  position: absolute;
-  right: 12px;
+#walkway {
+  .box {
+    position: absolute;
+    right: 12px;
+  }
 }
 </style>
 
