@@ -33,6 +33,7 @@ export default {
     }
 
     strong {
+      display: block;
       font-size: 1.5em;
     }
   }

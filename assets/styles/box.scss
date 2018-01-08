@@ -1,0 +1,14 @@
+@import './colors.scss';
+
+.box {
+  background-color: white;
+  color: $primary;
+  font-size: 1.1em;
+  padding: 7px 10px;
+  margin-bottom: 10px;
+
+  @media (min-width: 700px) {
+    font-size: 1.4em;
+    padding: 12px 20px;
+  }
+}

@@ -5,7 +5,7 @@
       <ul class="navigation-menu" :class="{'withLabels' : showInfo}">
         <li v-for="(item, index) in menu" :key="index" :class="[item.class, {'done': levelProgress.includes(item.level)}]">
           <nuxt-link class="ripple" :to="item.route" :title="item.label">
-            <span class="box"></span>
+            <span class="square"></span>
           </nuxt-link>
           <span :class="{'active' : showInfo}" class="label" v-text="item.label"></span>
         </li>
@@ -189,7 +189,7 @@ $size: 40px;
         width: $size;
 
         &.nuxt-link-exact-active {
-          .box {
+          .square {
             &::after {
               left: -12px;
               content: '';
@@ -203,13 +203,13 @@ $size: 40px;
       }
 
       &.done {
-        .box {
+        .square {
           background-color: currentColor;
         }
       }
 
       &.home {
-        .box {
+        .square {
           background-color: currentColor;
 
           &::before {
@@ -231,7 +231,7 @@ $size: 40px;
       }
 
       &.final {
-        .box {
+        .square {
           background-color: white;
           background-image: linear-gradient(
               45deg,
@@ -255,7 +255,7 @@ $size: 40px;
       }
     }
 
-    .box {
+    .square {
       align-items: center;
       border: 3px solid currentColor;
       display: flex;

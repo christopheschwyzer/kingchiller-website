@@ -20,8 +20,19 @@ export default {
 <style lang="scss">
 #storyTitle {
   &.section {
-    background-color: #9a010f;
+    background-color: #1f2c40;
+    background-image: linear-gradient(
+      to bottom,
+      rgb(19, 35, 80),
+      rgb(16, 5, 34)
+    );
     color: white;
+  }
+
+  h1 {
+    font-size: 16vw;
+    line-height: 0.9;
+    text-transform: uppercase;
   }
 }
 </style>

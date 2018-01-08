@@ -1,87 +1,42 @@
 <template>
-  <div id="chapter-0" class="chapter">
-
-    <scene1 />
-
-    <intersection-sound src="/sounds/1/transportaton_aircraft_twin_prop_small_idle_001.mp3">
-      <parallax>
-        <img slot="background" src="/images/chapter-0/airport.jpg" alt="Image">
-        <div slot="foreground">
-          <div class="boundaries">
-            <h2 v-scroll-reveal="{viewFactor: 1, delay: 200}">Chapter Zero°</h2>
-            <div v-scroll-reveal="{viewFactor: 1}" class="h2-sub">Moscow, 1989</div>
-          </div>
-          <div class="boundaries">
-            <div class="box" v-scroll-reveal="{reset: true}">
-              It was a surprisingly mild morning as
-              <strong>Amir</strong> was bording the plane to Vladivostok - Russia's east coast - or what people called it Дальний Восток, the far east.
-            </div>
-          </div>
-
-          <scroll-hint/>
-        </div>
-      </parallax>
+  <div id="chapter-0">
+    <intersection-sound src="/sounds/1/transportation_aircraft_commercial_airbus_a340_interior_landed_taxi_001.mp3">
+      <production />
+      <story-meta/>
+      <walkway />
+      <story-title />
+      <stairs/>
     </intersection-sound>
 
-    <section id="scene-3" class="section">
-      <div class="section section--dark" :class="{'section--fixed': sectionFixed}">
-        <div class="flex-center">
-          <h1>STOP</h1>
-        </div>
-        <scroll-hint/>
-      </div>
-    </section>
+    <chapter-title title="Chapter Zero°" />
 
-    <intersection-observer @change="handleIntersection4">
-      <div class="section">
-        <section class="section section--light section--fixed section--front" :style="{transform: 'translateX(' + visibilityProgress +'%)'}">
-          <h1>COMING FROM RIGHT</h1>
-        </section>
-      </div>
-    </intersection-observer>
-
-    <div class="section">
-      <section class="section section--dark" :class="{'section--fixed': showNext}">
-        <h1>NEW</h1>
-      </section>
-    </div>
-
-    <section class="section">
-      placeholder new
-    </section>
+    <plane />
+    <coming-soon />
   </div>
 </template>
 
 <script>
-import scene1 from '~/components/chapter-0/scene-1.vue'
-import ScrollHint from '~/components/ScrollHint.vue'
-
 import IntersectionSound from '~/components/IntersectionSound.vue'
-import IntersectionObserver from '~/components/IntersectionObserver.vue'
-import Parallax from '~/components/Parallax.vue'
+import Production from '~/components/chapter-0/Production.vue'
+import StoryMeta from '~/components/chapter-0/StoryMeta.vue'
+import Walkway from '~/components/chapter-0/Walkway.vue'
+import StoryTitle from '~/components/chapter-0/StoryTitle.vue'
+import Stairs from '~/components/chapter-0/Stairs.vue'
+import ChapterTitle from '~/components/chapter-0/ChapterTitle.vue'
+import Plane from '~/components/chapter-0/Plane.vue'
+import ComingSoon from '~/components/ComingSoon.vue'
 
 export default {
   components: {
-    scene1,
     IntersectionSound,
-    ScrollHint,
-    IntersectionObserver,
-    Parallax
-  },
-  data() {
-    return {
-      sectionFixed: false,
-      visibilityProgress: 100,
-      showNext: false
-    }
-  },
-  methods: {
-    handleIntersection4: function (intersection) {
-      this.sectionFixed = intersection.isIntersecting
-      let reveal = (intersection.scrollDirection === 'down' && intersection.visibilityProgress === 'increase') || (intersection.scrollDirection === 'up' && intersection.visibilityProgress === 'decrease')
-      this.visibilityProgress = reveal ? 100 - intersection.visibleRatio * 100 : -1 * (100 - intersection.visibleRatio * 100)
-      this.showNext = !reveal && intersection.isIntersecting
-    }
+    Production,
+    StoryMeta,
+    Walkway,
+    StoryTitle,
+    Stairs,
+    ChapterTitle,
+    Plane,
+    ComingSoon
   },
   mounted() {
     this.$store.commit('ADD_LEVEL', 0)
@@ -90,5 +45,18 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'chapter-0.scss';
+@import '~assets/styles/colors.scss';
+
+#chapter-0 {
+  .boundaries {
+    padding: 5vw;
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
 </style>
