@@ -36,12 +36,14 @@ export default {
   data() {
     return {
       dialog: null,
+      skipAnimation: false,
       secretKey: false
     }
   },
   watch: {
     '$route': function () {
       this.dialog = false
+      this.skipAnimation = true
     },
     dialog: function (state) {
       this.$emit('about', state)
@@ -55,10 +57,12 @@ export default {
   computed: {
     dialogState() {
       if (this.dialog !== null) {
-        return {
+        var classList = {
           'expanded': this.dialog,
-          'collapsed': !this.dialog
+          'collapsed': !this.dialog && !this.skipAnimation
         }
+        this.skipAnimation = false
+        return classList
       }
     }
   }
