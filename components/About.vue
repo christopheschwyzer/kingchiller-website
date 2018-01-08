@@ -6,7 +6,7 @@
         <div class="content">
           <navigation class="menu" />
           <div class="body">
-            <missions />
+            <!-- <missions /> -->
             <achievements />
             <donate />
             <credits />
